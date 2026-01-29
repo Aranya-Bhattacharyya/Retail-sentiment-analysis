@@ -55,22 +55,8 @@ Libraries: pandas, NumPy, VADER (vaderSentiment), Matplotlib, Seaborn, WordCloud
 
 Environment: Jupyter Notebook
 
-Project Structure
-Retail-sentiment-analysis/
-├── data/
-│   ├── raw/            # Original Amazon Fine Food Reviews (Kaggle)
-│   └── processed/      # Cleaned data with VADER sentiment scores
-├── notebooks/
-│   ├── 01_exploration.ipynb
-│   ├── 02_sentiment_analysis.ipynb
-│   └── 03_visualization_and_insights.ipynb
-├── results/
-│   └── figures/        # Exported charts (Brand health, Gap analysis)
-├── src/                # Modular Python scripts
-├── README.md
-└── requirements.txt
 Skills Demonstrated
-Applied NLP: Full pipeline implementation including text cleaning and VADER lexicon scoring.
+Applied NLP: Full pipeline implementation, including text cleaning and VADER lexicon scoring.
 
 Operational Strategy: MBA-level translation of data dissonance into actionable business value.
 
