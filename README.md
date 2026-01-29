@@ -56,7 +56,6 @@ Libraries: pandas, NumPy, VADER (vaderSentiment), Matplotlib, Seaborn, WordCloud
 Environment: Jupyter Notebook
 
 Project Structure
-Plaintext
 Retail-sentiment-analysis/
 ├── data/
 │   ├── raw/            # Original Amazon Fine Food Reviews (Kaggle)
