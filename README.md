@@ -1,158 +1,89 @@
-# Retail Customer Sentiment Analysis
+Retail Customer Sentiment Analysis
+An end-to-end NLP pipeline translating 568k+ customer reviews into actionable operational improvements.
 
-An NLP pipeline for analyzing customer reviews to extract actionable business insights and sentiment patterns.
+Project Overview
+This project automates the analysis of customer feedback using Natural Language Processing (NLP) to bridge the gap between numerical ratings and actual customer experience. By identifying "Sentiment Dissonance," the pipeline highlights specific areas for operational optimization in supply chain, packaging, and product quality.
 
-## Project Overview
+Status: Complete
 
-This project analyzes customer reviews from retail products to understand sentiment trends, identify common complaints and praise points, and provide data-driven recommendations for business improvement.
+Key Findings & Results
+The analysis was performed on a dataset of over 568,000 reviews, providing a statistically significant view of customer sentiment patterns.
 
-**Status**: In Development
+1. Sentiment-Rating Alignment
+High Model Accuracy: Successfully achieved an 80.22% agreement rate between VADER sentiment compound scores and user-provided star ratings.
 
-## Business Problem
+Positivity Bias: Roughly 88.1% of all reviews were classified as positive, with a mean sentiment compound score of 0.94 for 5-star ratings.
 
-Retail companies receive thousands of customer reviews across multiple products. Manually analyzing this feedback is time-consuming and prone to missing important patterns. This project automates sentiment analysis to help businesses:
+2. Operational Insight: The "Sentiment Gap"
+By calculating the dissonance between numerical ratings and text sentiment, the project identified critical operational blind spots:
 
-- Identify products with negative sentiment trends
-- Understand common customer pain points
-- Track sentiment changes over time
-- Prioritize areas for product improvement
+Mismatched Positives: Identified 15,792 reviews where customers gave 4-5 stars but used strongly negative language, often related to "stale" products or packaging issues that did not affect the product's primary rating.
 
-## Dataset
+Mismatched Negatives: Found 45,340 reviews with 1-2 star ratings despite positive text sentiment, frequently revealing cases where customers loved the product but had a poor delivery experience—a key area for Amazon-style operational optimization.
 
-**Source**: [To be determined - options include Amazon Product Reviews, Kaggle retail datasets, or scraped data]
+3. Business Recommendations
+Audit Logistics for "High-Gap" Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review rather than manufacturing changes, as dissatisfaction often stems from the delivery experience.
 
-**Size**: Approximately 10,000+ reviews
+Targeted Quality Control: Use the extracted negative themes (e.g., "medicinal flavor," "weight gain") to perform targeted quality control on specific product cohorts.
 
-**Features**:
-- Review text
-- Product category
-- Rating (1-5 stars)
-- Review date
+Technical Approach
+Data Processing
+Text Cleaning: Automated removal of HTML tags, URLs, and extra whitespace.
 
-## Technical Approach
+Preprocessing: Conversion to lowercase and normalization to improve VADER accuracy.
 
-### Data Processing
-1. Text cleaning and preprocessing
-2. Tokenization and stopword removal
-3. Handling of negations and intensifiers
+Refinement: Removal of empty reviews following the cleaning process.
 
-### Sentiment Analysis
-- **Method**: VADER (Valence Aware Dictionary and Sentiment Reasoner) and/or TextBlob
-- **Alternative approach**: Fine-tuned transformer model if computational resources allow
-- Classification into positive, negative, and neutral sentiment
+Sentiment Analysis
+Method: VADER (Valence Aware Dictionary and Sentiment Reasoner) was implemented for its sensitivity to retail nuances like intensifiers ("!!!") and capitalization.
 
-### Analysis & Insights
-- Sentiment distribution by product category
-- Temporal sentiment trends
-- Word frequency analysis for positive vs negative reviews
-- Common themes extraction using topic modeling (optional)
+Scoring: Calculation of neg, neu, pos, and compound scores (-1 to +1).
 
-### Visualization
-- Sentiment distribution charts
-- Word clouds for positive/negative reviews
-- Time series sentiment trends
-- Category-level sentiment comparison
+Classification: Labels assigned as Positive (≥ 0.05), Negative (≤ -0.05), or Neutral.
 
-## Tech Stack
+Visualization & Insights
+Brand Health Timelines: Tracking sentiment evolution over a 20-year period.
 
-**Languages & Libraries**:
-- Python 3.x
-- pandas - Data manipulation
-- NLTK / spaCy - Text processing
-- scikit-learn - Machine learning utilities
-- Matplotlib / Seaborn - Visualization
-- VADER Sentiment - Sentiment analysis
+The "Sentiment Gap": Bar charts identifying specific Product IDs with the highest dissonance between rating and text.
 
-**Development Environment**:
-- Jupyter Notebook for exploration
-- Python scripts for production code
+Pain Point Word Clouds: Visualizing recurring themes in negative reviews for targeted QA.
 
-## Project Structure
+Tech Stack
+Languages: Python 3.13
 
-```
-retail-sentiment-analysis/
-│
+Libraries: pandas, NumPy, VADER (vaderSentiment), Matplotlib, Seaborn, WordCloud
+
+Environment: Jupyter Notebook
+
+Project Structure
+Plaintext
+Retail-sentiment-analysis/
 ├── data/
-│   ├── raw/                 # Original dataset
-│   └── processed/           # Cleaned data
-│
+│   ├── raw/            # Original Amazon Fine Food Reviews (Kaggle)
+│   └── processed/      # Cleaned data with VADER sentiment scores
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_preprocessing.ipynb
-│   └── 03_sentiment_analysis.ipynb
-│
-├── src/
-│   ├── data_processing.py   # Data cleaning functions
-│   ├── sentiment_analyzer.py # Sentiment analysis logic
-│   └── visualization.py     # Plotting functions
-│
+│   ├── 01_exploration.ipynb
+│   ├── 02_sentiment_analysis.ipynb
+│   └── 03_visualization_and_insights.ipynb
 ├── results/
-│   ├── figures/             # Generated plots
-│   └── reports/             # Analysis summaries
-│
-├── requirements.txt         # Python dependencies
-└── README.md               # This file
-```
+│   └── figures/        # Exported charts (Brand health, Gap analysis)
+├── src/                # Modular Python scripts
+├── README.md
+└── requirements.txt
+Skills Demonstrated
+Applied NLP: Full pipeline implementation including text cleaning and VADER lexicon scoring.
 
-## Installation & Usage
+Operational Strategy: MBA-level translation of data dissonance into actionable business value.
 
-### Prerequisites
-```bash
-Python 3.8+
-pip
-```
+Data Engineering: Managing large-scale datasets (568k+ rows) and professional directory structures.
 
-### Setup
-```bash
-# Clone the repository
-git clone https://github.com/Aranya-Bhattacharyya/retail-sentiment-analysis.git
+Strategic Visualization: Use of Seaborn and Matplotlib to present complex sentiment trends to stakeholders.
 
-# Navigate to project directory
-cd retail-sentiment-analysis
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Download NLTK data (if using NLTK)
-python -c "import nltk; nltk.download('vader_lexicon'); nltk.download('stopwords')"
-```
-
-### Running the Analysis
-```bash
-# Instructions will be added as development progresses
-```
-
-## Key Findings
-
-*This section will be populated with insights once analysis is complete.*
-
-## Skills Demonstrated
-
-- Data cleaning and preprocessing
-- Natural Language Processing (NLP)
-- Sentiment analysis techniques
-- Data visualization
-- Python programming
-- Business insight generation from data
-
-## Future Enhancements
-
-- Implement aspect-based sentiment analysis (analyzing sentiment for specific product features)
-- Build a web dashboard for interactive exploration
-- Add comparative analysis across different retail categories
-- Deploy as a REST API for real-time sentiment scoring
-
-## License
-
-This project is open source and available for educational purposes.
-
-## Contact
-
+Contact
 Aranya Bhattacharyya
-- Email: aranyabhattacharyya38@gmail.com
-- LinkedIn: [linkedin.com/in/aranya-bhattacharyya](https://linkedin.com/in/aranya-bhattacharyya)
-- GitHub: [@Aranya-Bhattacharyya](https://github.com/Aranya-Bhattacharyya)
 
----
+Email: aranyabhattacharyya38@gmail.com
 
-*Last Updated: January 2026*
+LinkedIn: linkedin.com/in/aranya-bhattacharyya
+
+GitHub: @Aranya-Bhattacharyya
