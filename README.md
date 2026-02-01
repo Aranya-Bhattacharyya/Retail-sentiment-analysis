@@ -1,3 +1,5 @@
+![Python CI](https://github.com/Aranya-Bhattacharyya/Retail-sentiment-analysis/actions/workflows/python-tests.yml/badge.svg)
+
 Bridging the Gap Between Customer Text and Numerical Ratings
 This project implements a professional NLP pipeline to process over 568,000 Amazon reviews. By identifying "Sentiment Dissonance," this tool highlights operational blind spots in logistics, packaging, and product quality—translating raw data into actionable business strategy.
 
