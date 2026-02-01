@@ -1,0 +1,13 @@
+[project]
+name = "retail-sentiment-analysis"
+version = "0.1.0"
+dependencies = [
+    "pandas",
+    "vaderSentiment",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
