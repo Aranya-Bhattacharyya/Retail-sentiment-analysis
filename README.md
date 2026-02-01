@@ -1,74 +1,60 @@
-Retail Customer Sentiment Analysis
-An end-to-end NLP pipeline translating 568k+ customer reviews into actionable operational improvements.
+Bridging the Gap Between Customer Text and Numerical Ratings
+This project implements a professional NLP pipeline to process over 568,000 Amazon reviews. By identifying "Sentiment Dissonance," this tool highlights operational blind spots in logistics, packaging, and product quality—translating raw data into actionable business strategy.
 
-Project Overview
-This project automates the analysis of customer feedback using Natural Language Processing (NLP) to bridge the gap between numerical ratings and actual customer experience. By identifying "Sentiment Dissonance," the pipeline highlights specific areas for operational optimization in supply chain, packaging, and product quality.
+Key Findings and Impact
+High Model Accuracy: Achieved an 80.22% agreement rate between VADER sentiment scores and user star ratings.
 
-Status: Complete
-
-Key Findings & Results
-The analysis was performed on a dataset of over 568,000 reviews, providing a statistically significant view of customer sentiment patterns.
-
-1. Sentiment-Rating Alignment
-High Model Accuracy: Successfully achieved an 80.22% agreement rate between VADER sentiment compound scores and user-provided star ratings.
+Operational Blind Spots: Identified 45,340 reviews where customers liked the product but had a poor delivery experience, characterized by high rating-sentiment dissonance.
 
 Positivity Bias: Roughly 88.1% of all reviews were classified as positive, with a mean sentiment compound score of 0.94 for 5-star ratings.
 
-2. Operational Insight: The "Sentiment Gap"
-By calculating the dissonance between numerical ratings and text sentiment, the project identified critical operational blind spots:
+Professional Project Structure
+This repository has been refactored from a research notebook into a modular Python package to meet industry software engineering standards:
 
-Mismatched Positives: Identified 15,792 reviews where customers gave 4-5 stars but used strongly negative language, often related to "stale" products or packaging issues that did not affect the product's primary rating.
+Retail-sentiment-analysis/
+├── src/                # Modular Source Code
+│   ├── analyzer.py     # Core VADER sentiment logic
+│   ├── data_processing.py
+│   └── visualization.py
+├── tests/              # Automated Testing Suite (Pytest)
+├── Notebooks/          # Exploratory Data Analysis (EDA)
+├── pyproject.toml      # Project Configuration & Tooling
+└── README.md
 
-Mismatched Negatives: Found 45,340 reviews with 1-2 star ratings despite positive text sentiment, frequently revealing cases where customers loved the product but had a poor delivery experience—a key area for Amazon-style operational optimization.
+Technical Stack and Engineering Standards
+Languages: Python 3.13.
 
-3. Business Recommendations
-Audit Logistics for "High-Gap" Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review rather than manufacturing changes, as dissatisfaction often stems from the delivery experience.
+Libraries: pandas, NumPy, vaderSentiment, Matplotlib, Seaborn, and WordCloud.
 
-Targeted Quality Control: Use the extracted negative themes (e.g., "medicinal flavor," "weight gain") to perform targeted quality control on specific product cohorts.
+Testing: Automated unit testing via Pytest.
 
-Technical Approach
-Data Processing
-Text Cleaning: Automated removal of HTML tags, URLs, and extra whitespace.
+Code Quality: PEP 8 compliance enforced with Black formatting and Flake8 linting.
 
-Preprocessing: Conversion to lowercase and normalization to improve VADER accuracy.
+Dependency Management: Modern pyproject.toml architecture used for environment reproducibility.
 
-Refinement: Removal of empty reviews following the cleaning process.
+Installation and Usage
 
-Sentiment Analysis
-Method: VADER (Valence Aware Dictionary and Sentiment Reasoner) was implemented for its sensitivity to retail nuances like intensifiers ("!!!") and capitalization.
+1. Setup Environment
 
-Scoring: Calculation of neg, neu, pos, and compound scores (-1 to +1).
+python -m venv venv
+source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+pip install -e .
 
-Classification: Labels assigned as Positive (≥ 0.05), Negative (≤ -0.05), or Neutral.
+2. Running Automated Tests
 
-Visualization & Insights
-Brand Health Timelines: Tracking sentiment evolution over a 20-year period.
+Verify the reliability of the sentiment logic and data processing:
 
-The "Sentiment Gap": Bar charts identifying specific Product IDs with the highest dissonance between rating and text.
+pytest
 
-Pain Point Word Clouds: Visualizing recurring themes in negative reviews for targeted QA.
+Business Recommendations
 
-Tech Stack
-Languages: Python 3.13
+1. Audit Logistics for High-Gap Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review, as dissatisfaction often stems from the delivery experience rather than manufacturing.
 
-Libraries: pandas, NumPy, VADER (vaderSentiment), Matplotlib, Seaborn, WordCloud
-
-Environment: Jupyter Notebook
-
-Skills Demonstrated
-Applied NLP: Full pipeline implementation, including text cleaning and VADER lexicon scoring.
-
-Operational Strategy: MBA-level translation of data dissonance into actionable business value.
-
-Data Engineering: Managing large-scale datasets (568k+ rows) and professional directory structures.
-
-Strategic Visualization: Use of Seaborn and Matplotlib to present complex sentiment trends to stakeholders.
+2. Targeted Quality Control: Utilize recurring negative themes extracted via word clouds (e.g., "packaging issues") to perform targeted quality control on specific product cohorts.
 
 Contact
-Aranya Bhattacharyya
-
-Email: aranyabhattacharyya38@gmail.com
-
-LinkedIn: linkedin.com/in/aranya-bhattacharyya
+Aranya Bhattacharyya LinkedIn: linkedin.com/in/aranya-bhattacharyya
 
 GitHub: @Aranya-Bhattacharyya
+
+Email: aranyabhattacharyya38@gmail.com
