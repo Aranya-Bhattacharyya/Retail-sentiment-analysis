@@ -1,11 +1,10 @@
-Retail Sentiment Analysis and Operational Intelligence
 Bridging the Gap Between Customer Text and Numerical Ratings
 This project implements a professional NLP pipeline to process over 568,000 Amazon reviews. By identifying "Sentiment Dissonance," this tool highlights operational blind spots in logistics, packaging, and product quality—translating raw data into actionable business strategy.
 
 Key Findings and Impact
 High Model Accuracy: Achieved an 80.22% agreement rate between VADER sentiment scores and user star ratings.
 
-Operational Blind Spots: Identified 45,340 reviews where customers loved the product but had a poor delivery experience, characterized by high rating-sentiment dissonance.
+Operational Blind Spots: Identified 45,340 reviews where customers liked the product but had a poor delivery experience, characterized by high rating-sentiment dissonance.
 
 Positivity Bias: Roughly 88.1% of all reviews were classified as positive, with a mean sentiment compound score of 0.94 for 5-star ratings.
 
@@ -21,6 +20,7 @@ Retail-sentiment-analysis/
 ├── Notebooks/          # Exploratory Data Analysis (EDA)
 ├── pyproject.toml      # Project Configuration & Tooling
 └── README.md
+
 Technical Stack and Engineering Standards
 Languages: Python 3.13.
 
@@ -35,25 +35,25 @@ Dependency Management: Modern pyproject.toml architecture used for environment r
 Installation and Usage
 
 1. Setup Environment
-Bash
+
 python -m venv venv
 source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -e .
 
 2. Running Automated Tests
+
 Verify the reliability of the sentiment logic and data processing:
 
-Bash
 pytest
-Business Recommendations
-Audit Logistics for High-Gap Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review, as dissatisfaction often stems from the delivery experience rather than manufacturing.
 
-Targeted Quality Control: Utilize recurring negative themes extracted via word clouds (e.g., "packaging issues") to perform targeted quality control on specific product cohorts.
+Business Recommendations
+
+1. Audit Logistics for High-Gap Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review, as dissatisfaction often stems from the delivery experience rather than manufacturing.
+
+2. Targeted Quality Control: Utilize recurring negative themes extracted via word clouds (e.g., "packaging issues") to perform targeted quality control on specific product cohorts.
 
 Contact
-Aranya Bhattacharyya
-
-LinkedIn: linkedin.com/in/aranya-bhattacharyya
+Aranya Bhattacharyya LinkedIn: linkedin.com/in/aranya-bhattacharyya
 
 GitHub: @Aranya-Bhattacharyya
 
