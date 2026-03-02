@@ -10,9 +10,11 @@ Operational Blind Spots: Identified 45,340 reviews where customers liked the pro
 
 Positivity Bias: Roughly 88.1% of all reviews were classified as positive, with a mean sentiment compound score of 0.94 for 5-star ratings.
 
-Professional Project Structure
+## Professional Project Structure
 This repository has been refactored from a research notebook into a modular Python package to meet industry software engineering standards:
 
+-----------------------------------------------------------
+```text
 Retail-sentiment-analysis/
 ├── src/                # Modular Source Code
 │   ├── analyzer.py     # Core VADER sentiment logic
@@ -22,8 +24,9 @@ Retail-sentiment-analysis/
 ├── Notebooks/          # Exploratory Data Analysis (EDA)
 ├── pyproject.toml      # Project Configuration & Tooling
 └── README.md
-
-Technical Stack and Engineering Standards
+```
+---------------------------------------------------------------
+## Technical Stack and Engineering Standards
 Languages: Python 3.13.
 
 Libraries: pandas, NumPy, vaderSentiment, Matplotlib, Seaborn, and WordCloud.
@@ -36,23 +39,25 @@ Dependency Management: Modern pyproject.toml architecture used for environment r
 
 Installation and Usage
 
-1. Setup Environment
+### 1. Setup Environment
 
 python -m venv venv
 source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -e .
 
-2. Running Automated Tests
+### 2. Running Automated Tests
 
 Verify the reliability of the sentiment logic and data processing:
 
 pytest
 
-Business Recommendations
+## Business Recommendations
 
-1. Audit Logistics for High-Gap Products: Products identified with high rating-sentiment dissonance should undergo immediate logistics review, as dissatisfaction often stems from the delivery experience rather than manufacturing.
+### 1. Audit Logistics for High-Gap Products:
+Products identified with high rating-sentiment dissonance should undergo immediate logistics review, as dissatisfaction often stems from the delivery experience rather than manufacturing.
 
-2. Targeted Quality Control: Utilize recurring negative themes extracted via word clouds (e.g., "packaging issues") to perform targeted quality control on specific product cohorts.
+### 2. Targeted Quality Control:
+Utilize recurring negative themes extracted via word clouds (e.g., "packaging issues") to perform targeted quality control on specific product cohorts.
 
 Contact
 Aranya Bhattacharyya LinkedIn: linkedin.com/in/aranya-bhattacharyya
